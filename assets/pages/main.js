@@ -15,7 +15,6 @@ const optionsVue = {
             genres: [],
             search: "",
             selected: "all",
-            filtradoId: [],
             favoritos: [],
 
         }
@@ -59,7 +58,6 @@ const optionsVue = {
                 this.favoritos = this.favoritos.filter(movie => movie !== id)
                 localStorage.setItem('favoritos', JSON.stringify(this.favoritos))
             }
-            localStorage.setItem('favoritos', JSON.stringify(this.favoritos))
         },
         //fin de anadir favorito
         

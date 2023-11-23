@@ -22,7 +22,7 @@ const optionsVue = {
                 this.movies = data.movies
                 this.favoritos = JSON.parse(localStorage.getItem('favoritos')) || []
                 console.log(this.favoritos)
-                this.favoritosFiltrados = this.movies.filter(movie => this.favoritos.some(n => n === movie.id))
+                this.favoritosFiltrados = this.movies.filter(movie => this.favoritos.some(movies => movies === movie.id))
                 console.log(this.favoritosFiltrados)
             }
             )
@@ -40,7 +40,6 @@ const optionsVue = {
                 this.favoritos = this.favoritos.filter(movie => movie !== id)
                 localStorage.setItem('favoritos', JSON.stringify(this.favoritos))
             }
-            localStorage.setItem('favoritos', JSON.stringify(this.favoritos))
         },
     }
 }
