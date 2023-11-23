@@ -31,15 +31,18 @@ const optionsVue = {
 
     methods: {
         addFavs(id) {
-            const favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
-            if (!favoritos.includes(id)) {
-                this.favoritos.push(id)
-                localStorage.setItem('favoritos', JSON.stringify(this.favoritos))
+            let nuevosFavoritos = [...this.favoritos];
+
+            if (!nuevosFavoritos.includes(id)) {
+                nuevosFavoritos.push(id);
+            } else {
+                nuevosFavoritos = nuevosFavoritos.filter(movie => movie !== id);
+                this.favoritosFiltrados = this.favoritosFiltrados.filter(movie => movie.id !== id);
             }
-            else {
-                this.favoritos = this.favoritos.filter(movie => movie !== id)
-                localStorage.setItem('favoritos', JSON.stringify(this.favoritos))
-            }
+
+            this.favoritos = [...nuevosFavoritos];
+
+            localStorage.setItem('favoritos', JSON.stringify(nuevosFavoritos));
         },
     }
 }
