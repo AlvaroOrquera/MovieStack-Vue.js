@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieStack</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="shortcut icon" href="../images/logotipo.png" type="image/x-icon">
+</head>
+
+<body class="bg-gradient-to-t from-slate-700 to-slate-900">
+    <div id="app">
+        <header class="flex  justify-between min-w-full ">
+            <div class="flex">
+                <img src="../images/logotipo.png" alt="logotipo" class="flex w-20 rounded-2xl">
+                <h1 class="flex text-white  text-4xl mx-2.5 items-center">MovieStack</h1>
+            </div>
+            <div class="flex">
+                <nav class=" flex mx-2.5 text-white text-lg items-center ">
+                    <ul class=" flex  ">
+                        <li class=" hover:bg-gray-700 px-1.5 py-1 text-white rounded-3xl ">
+                            <a href="../../index.html">HOME</a>
+                        </li>
+                        <li class="hover:bg-gray-700 px-1.5 py-1 text-white rounded-3xl">
+                            <a href="./movies.html">MOVIES</a>
+                        </li>
+                        <li class=" hover:bg-gray-700 px-1.5 py-1 text-white rounded-3xl">
+                            <a href="./favs.html">FAVS</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <div class="flex content-center justify-center items-center" id="containerDetalles">
+                <template v-if="movie">
+                    <article
+                        class="flex flex-col md:flex-row bg-gradient-to-t from-slate-700 to-slate-900 items-center justify-center mt-3 rounded-3xl">
+
+                        <div class="flex flex-col flex-wrap items-center md:justify-center gap-10">
+                            <img class="md:h-[20rem] md:w-[70rem] md:flex-row rounded-lg md:mt-3 md:ml-5"
+                                v-bind:src="movie.image &&'https://moviestack.onrender.com/static/' + movie.image + '.jpg'"
+                                alt="{{movie.title}}"></img>
+                            <div class="flex flex-col flex-wrap justify-center gap-3 text-white">
+                                <h2 class="font-kanit; text-3xl p-2">{{movie.title}}</h2>
+                                <h3 class="font-semibold p-2 w-[10rem]">{{movie.tagline}}</h3>
+                                <p class="font-medium text-sm p-2 md:w-[25rem]">{{movie.overview}}</p>
+                            </div>
+
+                        </div>
+                        <div class="flex flex-wrap justify-around items-center p-6 gap-5 rounded-lg">
+                            <table
+                                class="border-black text-white mt-8 bg-gradient-to-t from-slate-700 to-slate-900 p-10 gap-5 rounded-lg text-center md:w-[20rem] md:h-[10rem] w-64 border-solid-white">
+                                <tbody>
+                                    <tr>
+                                        <th>Original Lenguage</th>
+                                        <td>{{movie.original_language}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Release Date</th>
+                                        <td>{{movie.release_date}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Runtime</th>
+                                        <td>{{movie.runtime}}</td>
+                                    </tr>
+                                    <tr>
+                                        <th>Status</th>
+                                        <td>{{movie.status}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table
+                                class="border-black text-white mt-8 bg-gradient-to-t from-slate-700 to-slate-900 p-10 gap-5 rounded-lg text-center md:w-[20rem]  md:h-[10rem] w-64 border-solid-white">
+                                <tr>
+                                    <th>Vote Average</th>
+                                    <td>{{movie.vote_average}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Budget</th>
+                                    <td>{{movie.budget}}</td>
+                                </tr>
+                                <tr>
+                                    <th>Revenue</th>
+                                    <td>{{movie.revenue}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </article>
+                </template>
+            </div>
+
+
+
+        </main>
+        <footer
+            class="flex min-h-min bg-gradient-to-t from-slate-900 to-slate-700 mt-3 text-center justify-center text-white text-xl">
+            <h2>Alvaro Orquera-Cohort 52</h2>
+        </footer>
+    </div>
+
+    <script type="module" src="../style/tailwind.config.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./details.js"></script>
+</body>
+
+</html>
