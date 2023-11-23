@@ -29,11 +29,7 @@ const optionsVue = {
             }
             )
             .catch(error => console.log(error))
-
-
-
     },
-
 }
 
 

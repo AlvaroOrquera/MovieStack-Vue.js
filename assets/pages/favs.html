@@ -48,8 +48,8 @@
                         <h2 class="text-center">{{favoritos.title}}</h2>
                         <h3 class="text-center">{{favoritos.tagline}}</h3>
                         <p class="line-clamp-5">{{favoritos.overview}}</p>
-                        <a v-bind:href="'./details.html?id='+ favoritos.id">More details ></a>
-                        <button id="botonFavorito" data-id="{{favoritos.id}}" v-on:click="addFavs(favoritos.id)">Delete
+                        <a class="hover:bg-gradient-to-t from-slate-900 to-slate-700  border-black p-2 rounded-lg" v-bind:href="'./details.html?id='+ favoritos.id">More details ></a>
+                        <button id="botonFavorito" class="hover:bg-gradient-to-t from-slate-900 to-slate-700  border-black p-2 rounded-lg" data-id="{{favoritos.id}}" v-on:click="addFavs(favoritos.id)">Delete
                             Favs</button>
                     </article>
                 </template>

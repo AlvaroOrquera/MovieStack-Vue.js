@@ -56,8 +56,8 @@
                         <h2 class="text-center">{{movie.title}}</h2>
                         <h3 class="text-center">{{movie.tagline}}</h3>
                         <p class="line-clamp-5">{{movie.overview}}</p>
-                        <a v-bind:href="'./details.html?id='+ movie.id">More details ></a>
-                        <button id="botonFavorito" data-id="{{movie.id}}" v-on:click="addFavs(movie.id)">Add Favs</button>
+                        <a class="hover:bg-gradient-to-t from-slate-900 to-slate-700  border-black p-2 rounded-lg "  v-bind:href="'./details.html?id='+ movie.id">More details ></a>
+                        <button id="botonFavorito" class="hover:bg-gradient-to-t from-slate-900 to-slate-700  border-black p-2 rounded-lg" data-id="{{movie.id}}" v-on:click="addFavs(movie.id)">Add Favs</button>
                     </article>
                 </template>
                 <template v-else>
