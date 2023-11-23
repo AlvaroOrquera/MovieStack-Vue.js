@@ -48,6 +48,7 @@ const optionsVue = {
         },
         //fin del filtro 
         //empieza añadir favorito
+
         addFavs(id) {
             const favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
             if (!favoritos.includes(id)) {

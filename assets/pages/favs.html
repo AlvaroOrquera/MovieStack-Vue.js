@@ -34,6 +34,10 @@
             </div>
         </header>
         <main class="min-h-screen">
+            <div id="banner">
+                <img src="../images/MovieStack.png" class="rounded-xl h-72 mt-4 md:w-full" alt="">
+            </div>
+
             <div id="contenedorDeFavoritos"
                 class="flex flex-wrap gap-7 text-white box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px; mt-4 mb-6 justify-center ">
                 <template v-if="favoritosFiltrados.length > 0" v-for="favoritos in favoritosFiltrados">
@@ -45,11 +49,12 @@
                         <h3 class="text-center">{{favoritos.tagline}}</h3>
                         <p class="line-clamp-5">{{favoritos.overview}}</p>
                         <a v-bind:href="'./details.html?id='+ favoritos.id">More details ></a>
-                        <button id="botonFavorito" data-id="{{favoritos.id}}" v-on:click="addFavs(favoritos.id)">Delete Favs</button>
+                        <button id="botonFavorito" data-id="{{favoritos.id}}" v-on:click="addFavs(favoritos.id)">Delete
+                            Favs</button>
                     </article>
                 </template>
                 <template v-else>
-                    <h2 >No Favs Found</h2>
+                    <h2>No Favs Found</h2>
                 </template>
             </div>
         </main>
